@@ -476,13 +476,22 @@
       });
     });
 
-    // Hamburger toggle
     const hamburger = document.getElementById("hamburger");
     const nav = document.querySelector("nav");
+    const links = document.querySelectorAll("nav ul li a");
 
+    // tombol hamburger
     hamburger.addEventListener("click", () => {
       nav.classList.toggle("active");
     });
+
+    // ketika salah satu link diklik → tutup menu
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+      });
+    });
+
 
     // Slideshow kategori
     const catImages = document.querySelectorAll('.cat-container img');
